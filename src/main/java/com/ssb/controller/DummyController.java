@@ -17,4 +17,5 @@ public class DummyController {
 	public Quote requestApiRandom() {
 		return dummyService.requestApiRandom();
 	}
+
 }
