@@ -1,5 +1,7 @@
 package com.ssb.domain;
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -13,6 +15,8 @@ public class PortfolioDto {
 
 	@JsonProperty("visibility")
 	private String visibility;
+
+	private List<OperationDto> operations;
 
 	/**
 	 * @return the id
@@ -57,6 +61,14 @@ public class PortfolioDto {
 	 */
 	public void setVisibility(String visibility) {
 		this.visibility = visibility;
+	}
+
+	public List<OperationDto> getOperations() {
+		return operations;
+	}
+
+	public void setOperations(List<OperationDto> operations) {
+		this.operations = operations;
 	}
 
 }

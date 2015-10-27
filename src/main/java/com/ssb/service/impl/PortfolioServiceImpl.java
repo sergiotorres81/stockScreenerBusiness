@@ -25,7 +25,6 @@ public class PortfolioServiceImpl implements PortfolioService {
 
 	@Override
 	public PortfolioDto findPortfolioByName(String portfolio) {
-		PortfolioDto portfolioDto = new PortfolioDto();
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
@@ -35,8 +34,7 @@ public class PortfolioServiceImpl implements PortfolioService {
 		UriComponents uriComponents = builder.buildAndExpand(portfolio);
 		HttpEntity<PortfolioDto> response = restTemplate.exchange(uriComponents.toUri(), HttpMethod.GET,
 				entity, PortfolioDto.class);
-		System.out.println(response.getBody());
-		return portfolioDto;
+		return response.getBody();
 	}
 
 }
