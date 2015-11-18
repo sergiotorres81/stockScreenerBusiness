@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.ssb.domain.remoteResources.ResourceDto;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PortfolioDto {
@@ -17,6 +18,8 @@ public class PortfolioDto {
 	private String visibility;
 
 	private List<OperationDto> operations;
+
+	private List<ResourceDto> resources;
 
 	/**
 	 * @return the id
@@ -69,6 +72,21 @@ public class PortfolioDto {
 
 	public void setOperations(List<OperationDto> operations) {
 		this.operations = operations;
+	}
+
+	/**
+	 * @return the resources
+	 */
+	public List<ResourceDto> getResources() {
+		return resources;
+	}
+
+	/**
+	 * @param resources
+	 *            the resources to set
+	 */
+	public void setResources(List<ResourceDto> resources) {
+		this.resources = resources;
 	}
 
 }
